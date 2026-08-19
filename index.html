@@ -1,0 +1,251 @@
+<!doctype html>
+<!--
+  Copia publicable de docs/politica-privacidad.md.
+
+  Es un archivo suelto y sin dependencias a propósito: se sube tal cual a
+  cualquier hosting estático y funciona. Si se cambia la política, hay que
+  cambiar LOS DOS archivos — el markdown es la fuente legible y este es el que
+  ven las tiendas y los usuarios.
+-->
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Política de privacidad · Lusent: Tinnitus</title>
+    <style>
+      :root {
+        --fondo: #ffffff;
+        --texto: #1a1d1d;
+        --suave: #5a6363;
+        --linea: #e3e8e8;
+        --acento: #0e7c7b;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --fondo: #101414;
+          --texto: #e8eded;
+          --suave: #9aa5a5;
+          --linea: #263030;
+          --acento: #33d3c4;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 2.5rem 1.25rem 5rem;
+        background: var(--fondo);
+        color: var(--texto);
+        font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        -webkit-text-size-adjust: 100%;
+      }
+      main { max-width: 42rem; margin: 0 auto; }
+      h1 { font-size: 1.75rem; line-height: 1.25; margin: 0 0 0.5rem; }
+      h2 { font-size: 1.25rem; margin: 2.5rem 0 0.75rem; }
+      h3 { font-size: 1.05rem; margin: 1.75rem 0 0.5rem; }
+      p, li { color: var(--texto); }
+      .fecha { color: var(--suave); font-size: 0.9rem; margin: 0 0 2rem; }
+      hr { border: 0; border-top: 1px solid var(--linea); margin: 2.5rem 0; }
+      a { color: var(--acento); }
+      ul { padding-left: 1.25rem; }
+      li { margin-bottom: 0.5rem; }
+      /* Las tablas son lo único que puede desbordar en un teléfono. */
+      .tabla { overflow-x: auto; margin: 1rem 0; }
+      table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+      th, td { text-align: left; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--linea); vertical-align: top; }
+      th { color: var(--suave); font-weight: 600; }
+      .contacto { font-size: 1.05rem; font-weight: 600; }
+      footer { margin-top: 3rem; color: var(--suave); font-size: 0.9rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Política de privacidad de Lusent: Tinnitus</h1>
+      <p class="fecha">Última actualización: 10 de agosto de 2026</p>
+
+      <p>
+        Lusent es una app para convivir con el acúfeno. Esta política cuenta qué datos maneja, por
+        qué, y qué podés hacer con ellos. Está escrita para que se entienda; si algo no se entiende,
+        escribinos.
+      </p>
+
+      <hr />
+
+      <h2>Lo más importante, en cuatro puntos</h2>
+      <ul>
+        <li>
+          <strong>La cuenta es opcional.</strong> Podés usar toda la app sin registrarte. Si no creás
+          cuenta, tus datos no salen nunca de tu teléfono.
+        </li>
+        <li>
+          <strong>No hay publicidad, ni rastreadores, ni analítica de terceros.</strong> No usamos
+          ninguna herramienta que siga tu comportamiento dentro ni fuera de la app.
+        </li>
+        <li>
+          <strong>No vendemos ni compartimos tus datos con nadie.</strong> Nunca, y no hay letra
+          chica.
+        </li>
+        <li>
+          <strong>Podés borrar tu cuenta desde la app</strong>, en Perfil → Tus datos, y se borra
+          todo del servidor sin intermediarios.
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2>Qué datos manejamos</h2>
+
+      <h3>Si no creás cuenta</h3>
+      <p>
+        Todo queda en el almacenamiento de tu teléfono y no viaja a ningún lado: tus respuestas del
+        cuestionario inicial, la frecuencia de tu acúfeno, tu diario, tus favoritos y tus ajustes. Si
+        borrás la app, se van con ella.
+      </p>
+
+      <h3>Si creás cuenta</h3>
+      <p>Se sincroniza para que no pierdas tu historial si cambiás de teléfono:</p>
+      <div class="tabla">
+        <table>
+          <thead>
+            <tr><th>Qué</th><th>Para qué</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Correo electrónico y contraseña</td>
+              <td>Identificarte al entrar. La contraseña se guarda cifrada; nadie puede leerla, nosotros tampoco</td>
+            </tr>
+            <tr><td>Tu nombre</td><td>Saludarte en la app. Podés poner el que quieras</td></tr>
+            <tr>
+              <td>Respuestas del cuestionario inicial</td>
+              <td>Personalizar el entrenamiento y avisarte si conviene que consultes a un profesional</td>
+            </tr>
+            <tr>
+              <td>Frecuencia de tu acúfeno y ajustes de audio</td>
+              <td>Generar el sonido con muesca a tu medida</td>
+            </tr>
+            <tr>
+              <td>Diario diario</td>
+              <td>Zumbido, malestar, sueño, ansiedad, energía, emociones y tus notas</td>
+            </tr>
+            <tr>
+              <td>Sesiones de escucha y de protocolos</td>
+              <td>Calcular tu progreso y el Índice de Regulación</td>
+            </tr>
+            <tr><td>Escala de Impacto</td><td>Ver tu evolución en el tiempo</td></tr>
+            <tr><td>Favoritos y artículos leídos</td><td>Que la app se acuerde de dónde ibas</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <strong>Esto incluye datos sobre tu salud.</strong> Los tratamos como lo que son: información
+        sensible que cargaste vos y que es tuya.
+      </p>
+
+      <h3>Lo que nunca sale de tu teléfono</h3>
+      <p>
+        <strong>El audio.</strong> Todos los ruidos y sonidos con muesca se generan dentro del
+        aparato: no se graba nada, no hay micrófono, no se sube ningún audio a ningún lado. La app
+        <strong>nunca pide permiso de micrófono</strong> y no puede escucharte.
+      </p>
+      <p>
+        Los recordatorios también son locales: los programa tu propio teléfono. No hay notificaciones
+        enviadas desde un servidor ni identificadores de envío.
+      </p>
+
+      <h3>Lo que se descarga</h3>
+      <p>
+        Las piezas musicales se bajan desde nuestro servidor cuando las pedís. Se guardan en tu
+        teléfono para que funcionen sin internet y las podés borrar cuando quieras.
+      </p>
+
+      <hr />
+
+      <h2>Dónde viven los datos</h2>
+      <p>
+        En <a href="https://supabase.com" rel="noopener">Supabase</a>, que nos provee la base de
+        datos y el sistema de cuentas, con servidores en <strong>Estados Unidos (Ohio)</strong>. Si
+        estás en la Unión Europea o en otra región, eso implica que tus datos se transfieren fuera de
+        tu país.
+      </p>
+      <p>
+        Supabase actúa solo como proveedor de infraestructura: no usa tus datos para nada propio.
+      </p>
+
+      <hr />
+
+      <h2>Cuánto tiempo los guardamos</h2>
+      <p>
+        Mientras tengas la cuenta. Cuando la borrás, se borra todo de inmediato y por cascada:
+        perfil, cuestionario, diario, sesiones, escala, favoritos y progreso de lectura. No guardamos
+        copias, y las copias de seguridad de la infraestructura rotan solas en el plazo habitual del
+        proveedor.
+      </p>
+
+      <hr />
+
+      <h2>Qué podés hacer</h2>
+      <ul>
+        <li>
+          <strong>Llevarte todo.</strong> Perfil → Tus datos → <em>Exportar todo</em> te da un
+          archivo con tu diario y tus respuestas, en un formato abierto que podés abrir en cualquier
+          lado.
+        </li>
+        <li><strong>Borrar lo de este teléfono</strong> sin tocar la cuenta.</li>
+        <li>
+          <strong>Borrar la cuenta entera</strong>, desde la app y sin escribirle a nadie. Y si ya
+          no tenés la app instalada, escribinos a la dirección del final: la borramos igual, sin
+          pedirte que la vuelvas a instalar. Se borra todo lo listado más arriba y no queda
+          ninguna copia.
+        </li>
+        <li><strong>Corregir lo que quieras</strong>: todos los datos son editables desde la app.</li>
+        <li>
+          <strong>Decidir sobre las novedades.</strong> El aviso de novedades por correo está apagado
+          por defecto; solo te escribimos si lo encendés, y podés apagarlo cuando quieras.
+        </li>
+      </ul>
+      <p>
+        Si estás en la Unión Europea, el Reino Unido, California, Brasil o Argentina, tenés además
+        los derechos que te dan sus leyes de protección de datos. Escribinos y los ejercemos: no vas
+        a tener que insistir.
+      </p>
+
+      <hr />
+
+      <h2>Menores</h2>
+      <p>
+        Lusent no está pensada para menores de 13 años y no recopilamos datos de menores a sabiendas.
+        Si sos madre, padre o tutor y creés que tu hijo creó una cuenta, escribinos y la borramos.
+      </p>
+
+      <hr />
+
+      <h2>Esto no es atención médica</h2>
+      <p>
+        Lusent es una herramienta de acompañamiento y educación. <strong>No diagnostica, no trata y
+        no cura el acúfeno</strong>, y no reemplaza la consulta con un profesional de la salud. Si tu
+        acúfeno es repentino, de un solo oído, pulsátil o viene con pérdida de audición o mareos,
+        consultá a un profesional.
+      </p>
+
+      <hr />
+
+      <h2>Cambios</h2>
+      <p>
+        Si esta política cambia, actualizamos la fecha de arriba y lo avisamos dentro de la app
+        cuando el cambio sea importante. No vamos a reducir tus derechos sin decírtelo.
+      </p>
+
+      <hr />
+
+      <h2>Contacto</h2>
+      <p class="contacto">
+        <a href="mailto:aclaratumente.leon@gmail.com">aclaratumente.leon@gmail.com</a>
+      </p>
+      <p>
+        Escribinos por cualquier cosa: para ejercer tus derechos sobre tus datos, para reportar un
+        problema, o para preguntar algo de lo que dice esta política.
+      </p>
+
+      <footer>Responsable del tratamiento: Leonel Caligiuri, Argentina.</footer>
+    </main>
+  </body>
+</html>
