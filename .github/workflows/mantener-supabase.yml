@@ -10,20 +10,34 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Consultar la API de Supabase
+      - name: Consultar la base de Supabase
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: |
           if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_ANON_KEY" ]; then
-            echo "Faltan los secretos SUPABASE_URL o SUPABASE_ANON_KEY en el repositorio."
+            echo "Faltan los secretos SUPABASE_URL o SUPABASE_ANON_KEY."
             exit 1
           fi
 
+          echo "URL empieza con: $(echo "$SUPABASE_URL" | cut -c1-8)"
+          echo "Largo de la clave: ${#SUPABASE_ANON_KEY} caracteres (tienen que ser 208)"
+
+          # Una consulta real a la base. El endpoint raiz /rest/v1/ devuelve 401
+          # aunque las credenciales sean correctas, y ademas no toca Postgres:
+          # lo que cuenta como actividad es una consulta como esta.
           codigo=$(curl -s -o /dev/null -w "%{http_code}" \
             --max-time 30 \
-            "$SUPABASE_URL/rest/v1/" \
-            -H "apikey: $SUPABASE_ANON_KEY")
+            "$SUPABASE_URL/rest/v1/profiles?select=*&limit=1" \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY") || salida=$?
+
+          # Sin esto, un fallo de curl mata el script sin imprimir nada, porque
+          # GitHub corre los pasos con "bash -e".
+          if [ -n "${salida:-}" ]; then
+            echo "curl fallo con codigo $salida (3 = URL mal formada)."
+            exit 1
+          fi
 
           echo "Supabase respondio: $codigo"
 
