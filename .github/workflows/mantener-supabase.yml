@@ -1,0 +1,36 @@
+name: Mantener Supabase despierto
+
+on:
+  schedule:
+    # Todos los lunes a las 12:00 UTC (9 de la mañana en Argentina).
+    - cron: '0 12 * * 1'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Consultar la API de Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_ANON_KEY" ]; then
+            echo "Faltan los secretos SUPABASE_URL o SUPABASE_ANON_KEY en el repositorio."
+            exit 1
+          fi
+
+          codigo=$(curl -s -o /dev/null -w "%{http_code}" \
+            --max-time 30 \
+            "$SUPABASE_URL/rest/v1/" \
+            -H "apikey: $SUPABASE_ANON_KEY")
+
+          echo "Supabase respondio: $codigo"
+
+          if [ "$codigo" != "200" ]; then
+            echo "El proyecto no esta respondiendo como deberia."
+            echo "Revisa https://supabase.com/dashboard - puede estar pausado."
+            exit 1
+          fi
+
+          echo "Todo bien. El contador de inactividad volvio a cero."
