@@ -2,8 +2,9 @@ name: Mantener Supabase despierto
 
 on:
   schedule:
-    # Todos los lunes a las 12:00 UTC (9 de la mañana en Argentina).
-    - cron: '0 12 * * *'
+    # Todos los días a las 12:00 UTC (9 de la mañana en Argentina).
+    # Diario y no semanal porque este chequeo NO evita que Supabase pause el
+    # proyecto —se probó y no funciona—: sirve para avisar cuando ya se durmió.    - cron: '0 12 * * *'
   workflow_dispatch:
 
 jobs:
