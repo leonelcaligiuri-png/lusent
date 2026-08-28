@@ -3,7 +3,7 @@ name: Mantener Supabase despierto
 on:
   schedule:
     # Todos los lunes a las 12:00 UTC (9 de la mañana en Argentina).
-    - cron: '0 12 * * 1'
+    - cron: '0 12 * * *'
   workflow_dispatch:
 
 jobs:
